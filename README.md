@@ -49,7 +49,7 @@ The above image shows the final infrastructure of the Xception model. A fully co
 A Convolutional Neural Network (ConvNet/CNN) is a Deep Learning algorithm which can take in an input image, assign importance (learnable weights and biases) to various
 aspects/objects in the image and be able to differentiate one from the other.
 
-![image](https://user-images.githubusercontent.com/60726057/134974657-c5e12fbd-796e-4c16-98b5-90b964203aab.png)
+![image](https://user-images.githubusercontent.com/60726057/134977003-5ab8424c-0b0a-497a-831a-85a8a19de8f6.png)
 
 We designed the CNN through which we passed our features to train the model and eventually test it using the test features. To construct CNN we have used a combination of several different functions such as sequential, Conv (2D), Batch Normalization, Maxpooling2D, Relu activation function, Dropout, Dense and finally softmax function.
 * We used Adam as our optimizer after training for 70 epochs using Adam with minimum learning rate 0.00001 and a batch size of 785, we achieved 69 % accuracy on the test set and 74% as train accuracy.
