@@ -1,6 +1,6 @@
 # Live Class Monitoring System(Face Emotion Recognition)
 
-![image](https://user-images.githubusercontent.com/60726057/134972006-80521f93-22a4-4590-a3b0-3476618bb4e2.png)
+![image](https://user-images.githubusercontent.com/60726057/134977330-65a03f6b-ee95-4332-b21c-3e2f17200ed4.png)
 
 ## Problem Statement:
 The Indian education landscape has been undergoing rapid changes for the past 10 years owing to the advancement of web-based learning services, specifically, eLearning platforms.
@@ -24,13 +24,13 @@ Here is the dataset link:- https://www.kaggle.com/msambare/fer2013
 ## 1) Using DeepFace
 DeepFace is a deep learning facial recognition system created by a research group at Facebook. It identifies human faces in digital images. The program employs a nine-layer neural network with over 120 million connection weights and was trained on four million images uploaded by Facebook users.The Facebook Research team has stated that the DeepFace method reaches an accuracy of 97.35% ± 0.25% on Labeled Faces in the Wild (LFW) data set where human beings have 97.53%. This means that DeepFace is sometimes more successful than the human beings.
 
-![image](https://user-images.githubusercontent.com/60726057/134973313-bc3ecb9e-e551-4cb0-8e2a-83c1331d2cfb.png)
+![image](https://user-images.githubusercontent.com/60726057/134977261-e2bc5cc1-2b05-49b8-9524-5f5733259376.png)
 
 • The actual emotion in the Picture was ANGRY Face but using DeepFace I found the prediction is HAPPY.
 
 ## 2) Using Transfer Learning Resnet50 
 
-![image](https://user-images.githubusercontent.com/60726057/134973881-1d5897b8-044a-4575-9a2c-7e92d8ccb90f.png)
+![image](https://user-images.githubusercontent.com/60726057/134977200-d8b54da4-e0a8-4d33-b859-7df775b2a071.png)
 
 Since the FER2013 dataset is quite small and unbalanced, we found that utilizing transfer learning significantly boosted the accuracy of our model.
 ResNet50 is the first pre-trained model we explored. ResNet50 is a deep residual network with 50 layers. It is defined in Keras with 175 layers. We replaced the original output layer with one FC layer of size 1000 and a softmax output layer of 7 emotion classes. We used Adam as our optimizer after training for 50 epochs using Adam and a batch size of 785, we achieved 63.11% accuracy on the test set and 67% on the train set. There is much less over-fitting. We have taken epochs as 50. Once the threshold is achieved by the model and we further tried to train our model, then it provided unexpected results and its accuracy also decreased. After that, increasing the epoch would also not help. Hence, epochs play a very important role in deciding the accuracy of the model, and its value can be decided through trial and error.
@@ -40,7 +40,7 @@ ResNet50 is the first pre-trained model we explored. ResNet50 is a deep residual
 Xception architecture is a linear stack of depth wise separable convolution layers with residual connections. This makes the architecture very easy to define and modify; it takes only 30 to 40 lines of code using a high level library such as Keras or Tensorflow not unlike an architecture such as VGG-16, but rather un- like architectures such as Inception V2 or V3 which are far more complex to define. An open-source implementation of Xception using Keras and Tensorflow is provided as part of the Keras Applications module2, under the MIT license.
 We used Adam as our optimizer after training for 70 epochs using Adam and a batch size of 785, we achieved 64% accuracy on the test set.
 
-![image](https://user-images.githubusercontent.com/60726057/134974083-3fbcdaa7-8559-4ec6-a993-2f310f2b2945.png)
+![image](https://user-images.githubusercontent.com/60726057/134977152-68fdd016-bf81-48bd-9216-aed540e75b4f.png)
 
 The above image shows the final infrastructure of the Xception model. A fully connected neural layer that contains residual depth wise separable convolution where each convolution followed by batch normalization and Relu activation function. The last layer applies a global average pooling and softmax activation function to produce prediction.
 
